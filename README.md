@@ -8,7 +8,7 @@
 
 #### 2.安装插件
 
-    cordova plugin add cordova-plugin-wechat-chenyu --variable WECHAT_APPID=[your key]
+    cordova plugin add https://github.com/waliu/cordova-plugin-wechat-chenyu --variable WECHAT_APPID=[your key]
 
 #### 3. 基础功能
 
