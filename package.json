@@ -1,0 +1,20 @@
+{
+  "name": "cordova-plugin-wechat-chenyu",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "",
+  "cordova": {
+    "id": "cordova-plugin-wechat-chenyu",
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "keywords": [
+    "ecosystem:cordova",
+    "cordova-android",
+    "cordova-ios"
+  ],
+  "author": "Chen Yu",
+  "license": "ISC"
+}

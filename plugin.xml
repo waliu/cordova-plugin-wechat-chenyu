@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova-plugin-wechat-chenyu" version="1.0.0" xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:android="http://schemas.android.com/apk/res/android">
+  <name>WeChat</name>
+  <author>Chen Yu</author>
+  <js-module name="WeChat" src="www/WeChat.js">
+    <clobbers target="WeChat"/>
+  </js-module>
+  <preference name="WECHAT_APPID"/>
+  <platform name="android">
+    <hook src="scripts/android-install.js" type="after_plugin_add"/>
+    <hook src="scripts/android-install.js" type="after_plugin_install"/>
+    <hook src="scripts/android-install.js" type="before_plugin_rm"/>
+    <hook src="scripts/android-install.js" type="before_plugin_uninstall"/>
+    <framework custom="true" src="libs/android/wechat-build.gradle" type="gradleReference"/>
+    <config-file parent="/*" target="res/xml/config.xml">
+      <feature name="WeChat">
+        <param name="android-package" value="plugin.wechat.chenyu.WeChat"/>
+      </feature>
+      <preference name="WECHAT_APPID" value="$WECHAT_APPID"/>
+    </config-file>
+    <config-file parent="/*" target="AndroidManifest.xml">
+      <uses-permission android:name="android.permission.INTERNET"/>
+      <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+      <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+      <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
+      <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    </config-file>
+    <config-file parent="/manifest/application" target="AndroidManifest.xml">
+      <activity android:exported="true" android:label="@string/launcher_name" android:launchMode="singleTask"
+                android:name=".wxapi.WXEntryActivity" android:taskAffinity="$PACKAGE_NAME"
+                android:theme="@android:style/Theme.Translucent">
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+          <data android:scheme="$WECHAT_APPID"/>
+        </intent-filter>
+      </activity>
+      <activity android:exported="true" android:label="@string/launcher_name" android:launchMode="singleTop"
+                android:name=".wxapi.WXPayEntryActivity" android:theme="@android:style/Theme.Translucent">
+        <intent-filter>
+          <action android:name="android.intent.action.VIEW"/>
+          <category android:name="android.intent.category.DEFAULT"/>
+          <data android:scheme="$WECHAT_APPID"/>
+        </intent-filter>
+      </activity>
+    </config-file>
+    <source-file src="src/android/AuthRequest.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/Constants.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/MiniProgram.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/Pay.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/PaymentRequest.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/Share.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/Util.java" target-dir="src/plugin/wechat/chenyu"/>
+    <source-file src="src/android/WeChat.java" target-dir="src/plugin/wechat/chenyu"/>
+  </platform>
+  <platform name="ios">
+    <config-file parent="/*" target="config.xml">
+      <feature name="WeChat">
+        <param name="ios-package" value="WeChat"/>
+      </feature>
+    </config-file>
+    <source-file src="src/ios/WeChat.m"/>
+  </platform>
+</plugin>
