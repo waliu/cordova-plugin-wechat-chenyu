@@ -1,4 +1,4 @@
-### 微信 cordova 插件 v1.0.0
+###  [微信 cordova 插件 v1.0.0](https://github.com/waliu/cordova-plugin-wechat-chenyu)
 
     插件环境 cordova-android >= 7.0.0
 
