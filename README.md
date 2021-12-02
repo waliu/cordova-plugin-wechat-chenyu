@@ -52,8 +52,8 @@ option
 | 参数 | 类型 | 说明 |
 | :----:| :----: | :----: |
 |message|mediaObject|分享的对象|
-|prepayId|string|微信返回的支付交易会话ID|
-|nonceStr|string|回调函数|
+|scene|number|分享的场景|
+|type|string|分享的类型|
 
 * 支付方法<br>
   window["WeChat"].share(option,successCallback, failedCallback)
