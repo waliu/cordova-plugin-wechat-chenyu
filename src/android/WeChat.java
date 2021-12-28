@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import java.util.Objects;
 
 /**
-* Chen Yu 2021/11/25
+* Chen Yu 2021/12/28
 **/
 public class WeChat extends CordovaPlugin {
 
@@ -85,9 +85,9 @@ public class WeChat extends CordovaPlugin {
     this.APP_ID = preferences.getString("WECHAT_APPID", "");
 
     // 通过WXAPIFactory工厂，获取IWXAPI的实例
-    api = WXAPIFactory.createWXAPI(activity, WeChat_APP_ID, true);
+    api = WXAPIFactory.createWXAPI(cordova.getActivity(), APP_ID, true);
     // 将应用的appId注册到微信
-    api.registerApp(WeChat_APP_ID);
+    api.registerApp(APP_ID);
     //创建分享对象
     share = new Share(api);
     //支付对象

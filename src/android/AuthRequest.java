@@ -1,4 +1,4 @@
-package com.example.flutter_plugin_wechat;
+package plugin.wechat.chenyu;
 
 import com.tencent.mm.opensdk.modelmsg.SendAuth;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
