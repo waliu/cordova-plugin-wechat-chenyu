@@ -143,11 +143,11 @@ option
 
 #### 8.常见问题：
 * 返回键问题
-   - 当你打开微信界面时，你点击返回。app可能会被关闭。
-   - 原因：因为cordova app 默认设置为点击一次物理返回按键 app就会关闭。
-   - 解决方案为 就是监听cordova 物理按键，阻止关闭代码如下。
-   - [js文档](https://www.w3cschool.cn/cordova/cordova_back_button.html)
-   - [ionic2及以上文档](https://ionicframework.com/docs/angular/platform)
+  - 当你打开微信界面时，你点击返回。app可能会被关闭。
+  - 原因：因为cordova app 默认设置为点击一次物理返回按键 app就会关闭。
+  - 解决方案为 就是监听cordova 物理按键，阻止关闭代码如下。
+  - [js文档](https://www.w3cschool.cn/cordova/cordova_back_button.html)
+  - [ionic2及以上文档](https://ionicframework.com/docs/angular/platform)
 
 ```js
 //js 阻止app关闭

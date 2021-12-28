@@ -80,7 +80,7 @@ public class Share {
       msg.title = message.getString("title");
       msg.description = message.getString("description");
       //普通图
-      Bitmap bmp = getOnLineBitmap(message.getString("thumbData"));
+      Bitmap bmp = getOnLineBitmap(message.getString("thumbURL"));
       //转换为缩略图
       Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
       msg.thumbData = Util.bmpToByteArray(thumbBmp, true);

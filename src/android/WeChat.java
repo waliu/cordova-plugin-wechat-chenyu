@@ -34,6 +34,8 @@ public class WeChat extends CordovaPlugin {
   private Pay pay;
   //小程序类
   private MiniProgram miniProgram;
+  // 认证类
+  public AuthRequest authRequest;
 
   @Override
   public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
@@ -83,15 +85,17 @@ public class WeChat extends CordovaPlugin {
     this.APP_ID = preferences.getString("WECHAT_APPID", "");
 
     // 通过WXAPIFactory工厂，获取IWXAPI的实例
-    api = WXAPIFactory.createWXAPI(cordova.getActivity(), APP_ID, true);
+    api = WXAPIFactory.createWXAPI(activity, WeChat_APP_ID, true);
     // 将应用的appId注册到微信
-    api.registerApp(APP_ID);
+    api.registerApp(WeChat_APP_ID);
     //创建分享对象
     share = new Share(api);
     //支付对象
     pay = new Pay(api);
     //小程序类
     miniProgram = new MiniProgram(api);
+    //认证类
+    authRequest = new AuthRequest(api);
     //初始化监听类
     IntentFilter intentFilter = new IntentFilter();
     //这个ACTION和后面activity的ACTION一样就行，要不然收不到的
