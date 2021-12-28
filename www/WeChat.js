@@ -7,7 +7,7 @@ var WeChat = {
    * @param args
    * @param success
    * @param error
-   * @version 1.0.0
+   * @version 1.0.1
    */
   share: (args, success, error) => {
     exec(success, error, weChatName, 'share', [args]);
@@ -17,7 +17,7 @@ var WeChat = {
    * @param args
    * @param success
    * @param error
-   * @version 1.0.0
+   * @version 1.0.1
    */
   auth(args, success, error) {
     exec(success, error, weChatName, 'auth', [args]);
@@ -27,7 +27,7 @@ var WeChat = {
    * @param args
    * @param success
    * @param error
-   * @version 1.0.0
+   * @version 1.0.1
    */
   sendPaymentRequest: (args, success, error) => {
     exec(success, error, weChatName, 'sendPaymentRequest', [args]);
@@ -38,7 +38,7 @@ var WeChat = {
    * @param args
    * @param success
    * @param error
-   * @version 1.0.0
+   * @version 1.0.1
    */
   openMiniProgram: (args, success, error) => {
     exec(success, error, weChatName, 'openMiniProgram', [args]);
@@ -47,7 +47,7 @@ var WeChat = {
    * 委托发起人。
    * java/oc 执行的方法 发送订阅 给 on
    * @param contentJson
-   * @version 1.0.0
+   * @version 1.0.1
    */
   resp(contentJson) {
     let content = null;
@@ -70,7 +70,7 @@ var WeChat = {
    * 委托接收人。
    * 监听微信 sdk 传送过来的值
    * @param listener 回调函数
-   * @version 1.0.0
+   * @version 1.0.1
    */
   onResp: (listener) => {
     window.addEventListener("respEvent", (e) => {

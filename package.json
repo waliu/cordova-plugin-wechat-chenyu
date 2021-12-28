@@ -1,8 +1,12 @@
 {
   "name": "cordova-plugin-wechat-chenyu",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "homepage": "",
+  "homepage": "https://github.com/waliu/cordova-plugin-wechat-chenyu.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/waliu/cordova-plugin-wechat-chenyu.git"
+  },
   "cordova": {
     "id": "cordova-plugin-wechat-chenyu",
     "platforms": [
